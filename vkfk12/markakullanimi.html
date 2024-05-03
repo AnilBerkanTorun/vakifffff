@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VAKIF K12</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<html lang="tr"><head><style>
+
+    .  body {
+        background-color: #ffffff;
+        color: #111111;
+        padding: 20px;
+        font-size: 20px;
+        margin-top: 80px;
+        text-align: left;
+    }
+
+    h1 {
+        text-align: center;
+        color: #111111;
+    }
+
+
+    .navbar {
+        position: relative; /* Navbar'ı göreceli pozisyona getir */
+    }
+
+    /* Arka planı blurlaştırmak için bir overlay ekliyoruz */
+    .navbar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(245, 245, 247, 0.72);
+        backdrop-filter: saturate(180%) blur(20px); /* Blurlama efekti */
+        z-index: -1;
+    }
+
+
+
+    .navbar-brand img {
+        width: 169px; /* İstenilen genişlik */
+        height: auto; /* Otomatik yükseklik */
+        display: block; /* Blok öğe olarak ayarlama */
+        margin: 0 auto; /* Yatayda otomatik marj */
+        text-align: center; /* Logoyu yatayda ortala */
+
+    }
+    .footer {
+        background-color: #f0f0f0;
+        padding: 10px 20px; /* Yükseklik ve genişlik ayarı */
+        text-align: center;
+        font-size: 20px;
+        margin-top: 200px;
+    }
+
+    .footer .social-icons {
+        float: left; /* Sosyal medya ikonlarını sola al */
+    }
+
+    .footer .footer-links {
+        float: right; /* Yazıları sağa al */
+    }
+
+
+    .footer {
+        color: black; /* Metin rengini siyah yapar */
+    }
+
+    .footer a {
+        color: black; /* Linklerin rengini siyah yapar */
+    }
+
+    .footer a:hover {
+        color: #111111; /* Linklerin üzerine gelindiğinde rengini mavi yapar */
+    }
+
+    .social-icons a {
+        color: #333;
+        margin: 0 10px;
+        font-size: 20px;
+    }
+    .social-icons a:hover {
+        color: blue;
+    }
+
+    .footer-links a {
+        color: #333;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+
+
+
+    .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    /* Add a hover effect if you want */
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    /* Set a specific color for each brand */
+
+    /* Facebook */
+    .fa-facebook {
+        background: #ffffff;
+        color: white;
+    }
+
+    /* Twitter */
+    .fa-twitter {
+        background: #ffffff;
+        color: white;
+    }
+
+    .fa-linkedin {
+        background: #ffffff;
+        color: white;
+    }
+    .fa-youtube {
+        background: #ffffff;
+        color: white;
+    }
+
+
+    p {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .navbar {
+        position: fixed; /* Navbar'ı üstte sabitlemek için */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999; /* Diğer öğelerin önünde olması için yüksek bir z-index */
+        height: 60px;
+
+    }
+
+    .navbar-nav {
+        margin-right: auto; /* Seçenekleri sağa yasla */
+    }
+
+    .navbar-brand {
+        margin-left: auto; /* Logo yüksekliği ile aynı hizalama */
+        margin-right: auto;
+    }
+
+    .dropdown-menu {
+        z-index: 1000;
+    }
+
+
+    .nav-item:hover .nav-link,
+    .dropdown-item:hover {
+        color: gray!important;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Sekme başlıklarının font boyutunu küçült */
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        font-weight: bold; /* Liste öğelerini bold yap */
+    }
+
+    .dropdown-menu .dropdown-item {
+        font-style: italic; /* İç içe liste öğelerini italic yap */
+    }
+
+
+
+
+
+
+    .aLeft {
+        background: #1A1A1A;
+        color: #111111;
+        display: table-cell;
+        padding: 16px;
+        line-height: 20px;
+        text-align: left;
+        text-decoration: none !important;
+        position: unset !important;
+    }
+
+    .aRight {
+        border-left: 2px solid #272727;
+        color: #111111 !important;
+        text-align: center !important;
+        width: 18% !important;
+        background: #1A1A1A !important;
+        display: table-cell !important;
+        position: unset !important;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    a {
+        color: #111111;
+        text-decoration: none;
+    }
+
+    .accordion {
+        width: 100%;
+        max-width: 360px;
+        /* margin: 30px auto 20px; */
+        background: #FFF;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .accordion .link {
+        cursor: pointer;
+        color: #111111;
+        position: relative;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        display: table;
+        border-bottom: 2px solid #272727;
+        width: 250px;
+    }
+
+    .accordion li:last-child .link {
+        border-bottom: 0;
+    }
+    .red-text {
+        color: red; /* Yazı rengini kırmızı yapar */
+    }
+
+    .accordion li i {
+        position: unset !important;
+        top: 16px;
+        left: 12px;
+        font-size: 13pt;
+        font-weight: 500;
+        color: #111111;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+
+    .accordion li i.fa-caret-down {
+        right: 12px;
+        left: auto;
+        font-size: 13pt;
+    }
+
+    .accordion li.open .link {
+        color: #fdfdfd;
+    }
+
+    .accordion li.open i {
+        color: #fdfdfd;
+    }
+
+    .accordion li.open i.fa-caret-down {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    .submenu {
+        display: none;
+        background: #444359;
+        font-size: 14px;
+    }
+
+    .submenu li {
+        background: #000 !important;
+        font-family: ff-din-web, "Helvetica Neue", "Segoe UI", Arial, freesans, sans-serif;
+        /* border-bottom: 1px solid #272727; */
+    }
+
+    lh {
+        color: #111111;
+        font-family: Arial, freesans, sans-serif;
+        font-size: 11px !important;
+        padding: 20px 20px 6px 20px;
+        text-transform: uppercase;
+    }
+
+    .submenu a {
+        text-transform: capitalize !important;
+        font-size: 15px !important;
+        display: block;
+        text-decoration: none;
+        color: #111111;
+        padding: 12px;
+        padding-left: 42px;
+        -webkit-transition: all 0.25s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+        font-weight: 500 !important;
+        padding: 8px 20px;
+    }
+
+    .submenu a:hover {
+        background: #000;
+        color: #FFF;
+        text-decoration: none;
+    }
+
+    /* .navbar-toggle .icon-bar {
+        display: block;
+        width: 14px !important;
+        height: 2px;
+        border-radius: 1px;
+    } */
+
+
+    .okastyle {
+        height: 44px;
+        width: auto;
+        background-color: black;
+        color: white;
+        border: unset;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .DeksisIcon {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-family: 'DEKSISFont';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        /* -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; */
+    }
+
+    .DeksisIcon-code:before {
+        content: ".";
+    }
+
+    .DeksisIcon-epub:before {
+        content: ":";
+    }
+
+    .DeksisIcon-book:before {
+        content: ";";
+    }
+
+    .DeksisIcon-book:before {
+        content: ";";
+    }
+
+    .DeksisIcon-organization:before {
+        content: ",";
+    }
+
+    .DeksisIcon-services:before {
+        content: "*";
+    }
+
+    .DeksisIcon-serviceTeachers:before {
+        content: "+";
+    }
+
+    .DeksisIcon-drone:before {
+        content: "-";
+    }
+
+    .DeksisIcon-member:before {
+        content: "?";
+    }
+
+    .DeksisIcon-user:before {
+        content: "!";
+    }
+
+    .DeksisIcon-guide:before {
+        content: "'";
+    }
+
+    .DeksisIcon-follower:before {
+        content: "\"";
+    }
+
+    .DeksisIcon-e:before {
+        content: "é";
+    }
+
+    .DeksisIcon-podcast:before {
+        content: "<";
+    }
+
+    .DeksisIcon-login:before {
+        content: ">";
+    }
+
+    .DeksisIcon-staff:before {
+        content: "#";
+    }
+
+    .DeksisIcon-parent:before {
+        content: "&";
+    }
+
+    .DeksisIcon-teacher:before {
+        content: "$";
+    }
+
+    .DeksisIcon-microphone:before {
+        content: "[";
+    }
+
+    .DeksisIcon-teaching:before {
+        content: "]";
+    }
+
+    .DeksisIcon-design:before {
+        content: "/";
+    }
+
+    .DeksisIcon-presentation:before {
+        content: "\\";
+    }
+
+    .DeksisIcon-student:before {
+        content: "%";
+    }
+
+    .DeksisIcon-ebook:before {
+        content: "(";
+    }
+
+    .DeksisIcon-material:before {
+        content: ")";
+    }
+
+    .DeksisIcon-app:before {
+        content: "=";
+    }
+
+    .DeksisIcon-designer:before {
+        content: "1";
+    }
+
+    .DeksisIcon-hide:before {
+        content: "2";
+    }
+
+    .DeksisIcon-notear:before {
+        content: "3";
+    }
+
+    .DeksisIcon-google:before {
+        content: "4";
+    }
+
+    .DeksisIcon-facebook:before {
+        content: "5";
+    }
+
+    .DeksisIcon-youtube:before {
+        content: "6";
+    }
+
+    .DeksisIcon-ppt:before {
+        content: "7";
+    }
+
+    .DeksisIcon-keynote:before {
+        content: "8";
+    }
+
+    .DeksisIcon-pdf:before {
+        content: "9";
+    }
+
+    .DeksisIcon-author:before {
+        content: "0";
+    }
+
+    .DeksisIcon-unitPlan:before {
+        content: "a";
+    }
+
+    .DeksisIcon-coursePlan:before {
+        content: "b";
+    }
+
+    .DeksisIcon-objective:before {
+        content: "c";
+    }
+
+    .DeksisIcon-keyQuestion:before {
+        content: "d";
+    }
+
+    .DeksisIcon-conceptMap:before {
+        content: "e";
+    }
+
+    .DeksisIcon-time:before {
+        content: "f";
+    }
+
+    .DeksisIcon-personalLearning:before {
+        content: "g";
+    }
+
+    .DeksisIcon-assessment:before {
+        content: "h";
+    }
+
+    .DeksisIcon-homework:before {
+        content: "i";
+    }
+
+    .DeksisIcon-portfolio:before {
+        content: "j";
+    }
+
+    .DeksisIcon-rubrik:before {
+        content: "k";
+    }
+
+    .DeksisIcon-exam:before {
+        content: "l";
+    }
+
+    .DeksisIcon-video:before {
+        content: "m";
+    }
+
+    .DeksisIcon-audio:before {
+        content: "n";
+    }
+
+    .DeksisIcon-ebooks:before {
+        content: "o";
+    }
+
+    .DeksisIcon-photo:before {
+        content: "p";
+    }
+
+    .DeksisIcon-dictonary:before {
+        content: "q";
+    }
+
+    .DeksisIcon-readBook:before {
+        content: "r";
+    }
+
+    .DeksisIcon-website:before {
+        content: "s";
+    }
+
+    .DeksisIcon-map:before {
+        content: "t";
+    }
+
+    .DeksisIcon-3d:before {
+        content: "u";
+    }
+
+    .DeksisIcon-chart:before {
+        content: "v";
+    }
+
+    .DeksisIcon-workSheet:before {
+        content: "w";
+    }
+
+    .DeksisIcon-workBook:before {
+        content: "x";
+    }
+
+    .DeksisIcon-exp:before {
+        content: "y";
+    }
+
+    .DeksisIcon-trip:before {
+        content: "z";
+    }
+
+    .DeksisIcon-math:before {
+        content: "A";
+    }
+
+    .DeksisIcon-science:before {
+        content: "B";
+    }
+
+    .DeksisIcon-phys:before {
+        content: "C";
+    }
+
+    .DeksisIcon-bio:before {
+        content: "D";
+    }
+
+    .DeksisIcon-chem:before {
+        content: "E";
+    }
+
+    .DeksisIcon-social:before {
+        content: "F";
+    }
+
+    .DeksisIcon-hist:before {
+        content: "G";
+    }
+
+    .DeksisIcon-geo:before {
+        content: "H";
+    }
+
+    .DeksisIcon-eng:before {
+        content: "I";
+    }
+
+    .DeksisIcon-music:before {
+        content: "J";
+    }
+
+    .DeksisIcon-art:before {
+        content: "K";
+    }
+
+    .DeksisIcon-religion:before {
+        content: "L";
+    }
+
+    .DeksisIcon-gym:before {
+        content: "M";
+    }
+
+    .DeksisIcon-it:before {
+        content: "N";
+    }
+
+    .DeksisIcon-turkish:before {
+        content: "O";
+    }
+
+    .DeksisIcon-phil:before {
+        content: "P";
+    }
+
+    .DeksisIcon-sociology:before {
+        content: "Q";
+    }
+
+    .DeksisIcon-geometry:before {
+        content: "R";
+    }
+
+    .DeksisIcon-vitrivius:before {
+        content: "S";
+    }
+
+    .DeksisIcon-physicology:before {
+        content: "T";
+    }
+
+    .DeksisIcon-localHistory:before {
+        content: "U";
+    }
+
+    .DeksisIcon-sportClub:before {
+        content: "V";
+    }
+
+    .DeksisIcon-artClub:before {
+        content: "W";
+    }
+
+    .DeksisIcon-langClub:before {
+        content: "X";
+    }
+
+    .DeksisIcon-scienceClub:before {
+        content: "Y";
+    }
+
+    .DeksisIcon-itClub:before {
+        content: "Z";
+    }
+
+    #sidebar-wrapper {
+        background: #1A1A1A !important
+    }
+
+    .navbar-header {
+        background: #1A1A1A !important
+    }
+</style>
+
+
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bu sitede, Türk Edebiyatı'nın belli başlı romanlarını merkeze koyarak, bu kitapların daha iyi anlaşılabilmesi için kullanılabilecek bilgiler vermeye çalışıyoruz. Sitedeki amacımız, okumayı düşündüğünüz, okumakta olduğunuz veya ileride okumak isteyebileceğiniz romanlarla ilgili tüm önemli bilgileri, tek yerden alabilmeniz üzerine kurulu">
+    <meta name="author" content="Onder Boydak, Ismail Aktas">
+    <meta name="keywords" content="vakif vakıf k12 school preschool primaryschool highschool okul ortaokul lise edebiyat literature">
+    <title>VAKIF K12</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/Assets/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/Assets/css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/Assets/fontawesome470/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+    <link rel="shortcut icon" href="/Assets/images/favicon.ico">
+
+    <!-- Custom CSS -->
+    <link href="/Assets/sidebar/css/simple-sidebar.css" rel="stylesheet">
+
+    <link href="/Assets/modal/style.css" rel="stylesheet">
+
+    <link href="/Assets/css/component.css" rel="stylesheet">
+    <link href="/Assets/css/custom.css?ver13" rel="stylesheet">
+    <link href="/Assets/css/mjTab.css" rel="stylesheet">
+
+</head>
+
+<body style="padding: 0px !important;">
+
+<script>
+    // Mouse ile üzerine gelindiğinde dropdown menüyü aç
+    function openDropdown(id) {
+        document.getElementById(id).classList.add('show');
+    }
+
+    // Mouse ile dışına çıkıldığında dropdown menüyü kapat
+    function closeDropdown(id) {
+        document.getElementById(id).classList.remove('show');
+    }
+
+    // Mouse ile dropdown menü üzerinden çıkılmadığında menünün açık kalmasını sağla
+    document.addEventListener("mouseover", function(event) {
+        // Dropdown menüsü üzerinden mi çıkıldı kontrol et
+        var isDropdown = event.target.closest(".dropdown");
+        if (!isDropdown) {
+            // Dropdown menüsü dışına çıkıldı, tüm dropdown menüleri kapat
+            var dropdowns = document.querySelectorAll(".dropdown-menu");
+            dropdowns.forEach(function(dropdown) {
+                dropdown.classList.remove('show');
+            });
+        }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg bg-light navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown" onmouseover="openDropdown('hakkimizdaDropdown')" onmouseout="closeDropdown('hakkimizdaDropdown')">
+                    <a class="nav-link" href="#" style="color: black;">Hakkımızda</a>
+                    <div class="dropdown-menu" id="hakkimizdaDropdown">
+                        <a class="dropdown-item" href="kurucudan.html">Kurucudan</a>
+                        <a class="dropdown-item" href="yonetim.html">Yönetim</a>
+                        <a class="dropdown-item" href="20142020.html">2015-2020</a>
+                        <a class="dropdown-item" href="stratejikplan.html">Stratejik Plan</a>
+                        <a class="dropdown-item" href="raporlar.html">Raporlar</a>
+                        <a class="dropdown-item" href="bagis.html">Bağış</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" onmouseover="openDropdown('neyapiyoruzDropdown')" onmouseout="closeDropdown('neyapiyoruzDropdown')">
+                    <a class="nav-link" href="#" style="color: black;">Ne Yapıyoruz</a>
+                    <div class="dropdown-menu" id="neyapiyoruzDropdown">
+                        <a class="dropdown-item" href="cevrimiciogrenim.html">Çevrimiçi Öğrenim</a>
+                        <a class="dropdown-item" href="okuldonusum.html">Okul Dönüşüm</a>
+                        <a class="dropdown-item" href="isbirlikleri.html">İş Birlikleri</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" onmouseover="openDropdown('nasilYapiyoruzDropdown')" onmouseout="closeDropdown('nasilYapiyoruzDropdown')">
+                    <a class="nav-link" href="#" style="color: black;">Nasıl Yapıyoruz</a>
+                    <div class="dropdown-menu" id="nasilYapiyoruzDropdown">
+                        <a class="dropdown-item" href="projeyonetimi.html">Proje Yönetimi</a>
+                        <a class="dropdown-item" href="uretimpaylasim.html">Üretim-Paylaşım</a>
+                        <a class="dropdown-item" href="degerlendirme.html">Değerlendirme</a>
+                        <a class="dropdown-item" href="etik.html">Etik</a>
+                    </div>
+                </li>
+            </ul>
+            <a class="navbar-brand" href="index.html"> <!-- Logonun bulunduğu yerde href özelliğine istediğiniz sayfanın URL'sini ekleyin -->
+                <img src="vakıfk12_logo.png" alt="Logo" width="80" height="40">
+            </a>
+
+
+
+
+            <div class="ms-auto">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- <div id="wrapSidebar" class="toggled" style="    color: white;"> -->
+<div id="wrapSidebar" class="toggled" style="background-color: #f5f5f5 !important;">
+
+
+
+    <!-- jQuery -->
+    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-1LSZE3B188&amp;cx=c&amp;_slc=1"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="/Assets/js/jquery.js"></script>
+    <script src="/Assets/js/custom.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+    <style>
+
+    </style>
+
+    <div class="row" style="min-height:90%; height:auto;  background: white; margin-left: 0px; margin-right: 0px;">
+        <div class="container" style="margin-top: 0px;">
+            <div class="row">
+                <div style="text-align: justify;">
+                    <br>
+                    <h1 style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#000000;"><strong><span style="line-height: 1.8; color: #111111" iaz>Vakıf k12 Marka Kullanımı</span></strong></span><br>
+                        <span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif;" > <p style="text-align: left;color: black">Bu belge, Vakfın k12’nin adı, logosu ve diğer iletişim varlıklarının (resimler, video gibi) vakfın bağışçıları ve 3. parti paydaşları tarafından kullanılmasına izin verilen durumları ve nasıl kullanılacağına dair bilgileri içerir.<br>
+Aşağıda Vakıf k12’nin adı, logosu ve diğer iletişim varlıklarının kullanımına izin verilen ve izin verilmeyen durumlarla ilgili kısa bir bilgi yer almaktadır.</p> </span></span></span></h1>
+
+                    <h2 style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#111111; text-align: center;"><strong>İzin Verilen Durumlar</strong></span></h2>
+
+                    <h1 style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif;"><span style="text-align: left"> <p style="text-align: left; color: black">Vakıf k12 ile yaptığınız iş birliği ile ilgili aşağıdaki bilgileri kamuya açıklayabilirsiniz: </p></span></span></span></span></h1>
+
+                    <ol>
+                        <li>
+                            <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="text-align: center"></span> <span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Kâr amacı gütmeyen ve tanıtım etkinlikleri ile ilgili vakfın adı</span></span></span></p>
+                        </li>
+                        <li>
+                            <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Bağış yapılmış ise verilen toplam veya maksimum miktarı</span></span></span></p>
+                        </li>
+                        <li>
+                            <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Bağış yapılan, sponsor olunan proje veya etkinlik hakkında bilgi</span></span></span></p>
+                        </li>
+                        <li>
+                            <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Gizlilik yükümlülüklerinize tabi bilgileri ve KVKK kapsamındaki verileri içermiyorsa yapılan/alınan hizmetin tanımı</span></span></span></p>
+                        </li>
+                    </ol>
+
+                    <h2 style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#111111; text-align: center" ><strong>Onay Gerektiren Durumlar</strong></span></h2>
+
+                    <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Aşağıdaki durumlarda kullanmadan önce Vakıf k12’den yazılı onay alınması gerekmektedir.</span></span></span></p>
+
+                    <ol>
+                        <li>
+                            <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Promosyon/ Tanıtım amaçlı isim kullanımı (Tanıtım amaçları arasında basın açıklamaları, kamuya açık duyurular, vaka çalışmaları ve ücretli dijital medya yer almaktadır.)</span></span></span></p>
+                        </li>
+                        <li>
+                            <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Herhangi bir amaç için logo kullanımı (Vakfın logosunun kullanılması yazılı izin gerektirebilir, ancak vakfa ait olan veya onun adına dağıtılan logo içeren materyaller üreten satıcılar vakıftan izin almadan kullanabilir.)</span></span></span></p>
+                        </li>
+                        <li>
+                            <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">İletişim varlıkları (örneğin fotoğraf, video görüntüleri, infographics vb.) (Vakfın fotoğraf ve video çekimlerinin her türlü kullanımı yardım amaçlı olmalıdır ve vakfın izni dahilinde kullanılabilir.)</span></span></span></p>
+                        </li>
+                    </ol>
+
+                    <h2 style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#111111;"><strong>İzin Verilmeyen Durumlar</strong></span></h2>
+
+                    <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif;color: black">Aşağıdakiler durumlara izin verilmemektedir.</span></span></span></p>
+
+                    <ol>
+                        <li>
+                            <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif;color: black">Vakfın adını veya logosunu ticari veya perakende amaçlı kullanılması</span></span></span></p>
+                        </li>
+                        <li>
+                            <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Vakfın sizi, ürünlerinizi veya hizmetlerinizi desteklediğini belirtilmesi veya ima edilmesi</span></span></span></p>
+                        </li>
+                        <li>
+                            <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Alt kuruluşların, taşeronların, koşullu işçilerin, acentelerin veya bağlı kuruluşların vakfın faaliyetlerini, ürünlerini veya hizmetlerini doğrudan finanse ettiğini veya onayladığını belirtmek veya ima etmesi</span></span></span></p>
+                        </li>
+                    </ol>
+
+                    <p  style="margin-top: 55px; padding-left: 24px;text-align: left" class="vakfinadi"><span style="color:#696969;"><span style="font-size:36px;"> <span style="text-align: center"></span><strong><span style="line-height: 1.8; color: #111111">Kullanım Durumları İçin Yönergeler</span></strong></span></span></p>
+                    <span style="color:#696969; text-align: left; padding-left: 24px"><span style="font-size: 24px; color: #111111"><b>Vakfın Adı</b></span></span>
+
+                    <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Vakıf k12’nin resmi unvanı K12 Eğitim Araştırma ve Geliştirme Vakfı’dır. Vakıf isminin geçtiği alanlarda kısa ismi “Vakıf k12” kullanılmalıdır.</span></span></span><br>
+                        &nbsp;</p>
+
+                    <h3 style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#111111;"><strong>1. Vakıf ile ilişkinin açıklanması </strong></span></h3>
+
+                    <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Bir bağışçı veya satıcı, vakfın adını düz bir metin biçiminde kullanabilir, ancak kullanım sırasında iş birliği net bir şekilde belirtilmeli, başlıkta veya kullanıldığı alanda Vakıf sponsor ve ödül veren gibi ifade edilmemelidir.</span></span></span><br>
+                        &nbsp;</p>
+
+                    <h3 style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#111111;"><strong>2. Vakıf k12’nin referans gösterilmesi </strong></span></h3>
+
+                    <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">Vakıf k12 tarafından üretilmeyen ama üretilmesine katkı sağladığı veya Vakıf k12’nin ürünleri kullanılarak üretilen rapor, sunum, materyal gibi dokümanlarda Vakıf k12’ye referans verilebilir. Bu gibi durumlarda vakfın logosu kullanılamaz, kullanılan içeriğin hangi ürenden alındığı açık şekilde referans olarak gösterilir.<br>
+Bu [materyal / yayın / sunum / rapor / öğrenim planı vb.], Vakıf k12 tarafından [finanse edilen / hazırlanan / üretilen vb.], çalışmalara dayanmaktadır. İçerdiği bulgular ve sonuçlar yazar/lara aittir ve Vakıf k12’nin görüş ve politikalarını yansıtmayabilir.<br>
+Bu [materyal / yayın / kitap / rapor / materyal] Vakıf k12 için hazırlanmıştır. İçerdiği bulgular ve sonuçlar yazar/lara aittir ve Vakıf k12’nin görüş veya politikalarını yansıtmayabilir.<br>
+Bu [kısım / bölüm / rapor / görsel / materyal] Vakıf k12’nin hazırladığı [alıntının yapıldığı çalışma APA referans ile] çalışmadan alıntı yapılmıştır.</span></span></span><br>
+                        &nbsp;</p>
+
+                    <h3 style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#111111;"><strong>3. Vakıf adının kullanılması ile ilgili ek durumlar</strong>&nbsp;</span></h3>
+
+                    <p style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif; color: black">“Vakıf k12” yazılımında “V” harfi büyük diğer harfler küçük yazılmalıdır. Tüm harfler büyük yazılmamalıdır. “k” harfinin yazılımı küçük harf ile yapılır ve “k12” ibareti birlikte kullanılır.&nbsp;&nbsp;</span></span></span></p>
+
+                    <h3 style="margin-top: 55px; padding-left: 24px;text-align: left"><span style="color:#111111;"><strong>Vakfın Logosu</strong></span></h3>
+
+                    <p style="margin-top: 55px; padding-left: 24px;text-align: left"Vakıf İletişim Varlıkları><span style="color:#696969;"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif;color: black">Vakıf k12’nin logosu ancak vakfın yazılı izni dahilinde kullanılabilir. Vakıf kullanım iznini verdiği durumlar için vakıf logosunu yüksek çözünürlük veya vektörel olarak paylaşabilir. Kullanımında dikkat edilecek noktalar aşağıda belirtilmiştir.<br>
+<p style="color: black; padding-left: 24px;text-align: left">1. Vakıf logosu siyah ve beyaz olarak kullanılabilir, farklı renkte bir kullanımı yoktur. </p><br>
+<img alt="" src="http://admindemo.k12.org.tr/Uploads//524258e84eaf20b6b87d1cf24c0bb9b2.png" style="width: 932px; height: 266px;"><br>
+                    <p style="color: black; padding-left: 24px;text-align: left">2.&nbsp;Vakıf logosunun kullanılabileceği minimum yükseklik 6,5 mm’dir. </p><br>
+<img alt="" src="http://admindemo.k12.org.tr/Uploads//ca3e8532035da66acbcddec9d7df5fb4.png" style="width: 902px; height: 118px;"><br>
+<p style="color: black; padding-left: 24px;text-align: left">3. Sadece logo ve web adresinin kullanıldığı mecralarda, aşağıda gösterildiği şekilde, www.k12.org.tr adresi, “1” rakamına sağdan bloklanarak ve “ı” harfi yüksekliğinin altına hizalanarak kullanılacaktır.</p><br clear="all">
+&nbsp;<img alt="" src="http://admindemo.k12.org.tr/Uploads//09ebe429520c79ec8a6ed1438af6e8cf.png" style="width: 902px; height: 492px;"><br>
+<br>
+<p style="color: black; padding-left: 24px;text-align: left">4.&nbsp;Aşağıdaki örnekler yanlış kullanıma örnektir, vakfın logosu aşağıdaki şekiller de kullanılamaz.&nbsp; </p><br>
+<br>
+ <strong><u><span  style="color: black; padding-left: 24px;text-align: left" class="red-text">Vakıf logosunun rengi değiştirilemez.</span></u></strong><br>
+&nbsp;<img alt="" src="http://admindemo.k12.org.tr/Uploads//f9cba64c7c651ef54a68b93a9acf953c.png" style="width: 872px; height: 124px;"><br>
+&nbsp;<br>
+&nbsp;<br>
+ <strong><u><span style="color: black; padding-left: 24px;text-align: left"  class="black-text">Logo cümle içerisinde kullanılamaz.</span></u></strong><br>
+&nbsp;<img  alt="" src="http://admindemo.k12.org.tr/Uploads//b020ee82c68d95a2bd792ed80933fceb.png" style="width: 716px; height: 100px; padding-left: 24px;text-align: left"><br>
+&nbsp;<br>
+<strong><u><span style="color: black; padding-left: 24px;text-align: left"  class="red-text">Logo elemanları eksiltilemez, yerleri, birbirlerine olan oranları ve birbirleri ile olan ilişkileri değiştirilemez.</span></u></strong><br>
+<br>
+&nbsp;<img alt="" src="http://admindemo.k12.org.tr/Uploads//c23fd9f9e58adc87ddafaa6691496978.png" style="width: 902px; height: 190px;"><br>
+&nbsp;<br>
+<strong><u><span style="color: black; padding-left: 24px;text-align: left" class="red-text">Logo daraltılıp, genişletilemez.</span></u></strong><br>
+&nbsp;<img alt="" src="http://admindemo.k12.org.tr/Uploads//446c06f68d7660fc22c0634f0b2bd0ef.png" style="width: 838px; height: 126px;"><br>
+<p style="text-align: left; padding-left: 24px" class="blacklogo-text"><strong><u>Logo ve yazı karakterleri değiştirilemez.</u></strong></p>
+<img style="text-align: left; padding-left: 24px" alt="" src="http://admindemo.k12.org.tr/Uploads//b6756b1c1b72799faa0e871251dfc56d.png" style="width: 844px; height: 124px;"></span></span></span></p>
+
+                    <h2><span style="color:#111111;"><strong style="color: #111111; font-family: inherit; font-size: 30px; text-align: left;padding-left: 24px">Vakıf İletişim Varlıkları</strong></span></h2>
+
+                    <p  style="padding-left: 24px; color: black; text-align: left"><span style="font-size:15px;line-height:1.8;"><span style="font-family:verdana,geneva,sans-serif;"><span style="color:black;">Vakıf k12’nin iletişim varlıkları (fotoğraf, video gibi) ancak vakfın yazılı izni dahilinde kullanılabilir. Vakıf kullanım iznini verdiği durumlar için standartları belirleme hakkına sahiptir. Bu durum vakfın kendi YouTube kanalı üzerinden paylaştığı videolar için farklıdır. Vakfın YouTube kanalı üzerinden paylaşılan videolar yine YouTube kanalı üzerinden farklı bir platforma yüklemeden izinsiz kullanılabilir.<br>
+Bağışçılar veya ortaklık yapan kurumlar Vakıf kurucu ve yönetim kurulu üyelerinin video ve görsellerini kullanamazlar.<br>
+Vakfın sahip olmadığı görüntüler, yalnızca fotoğraf veya videonun telif hakkına sahip olan kişiden izin veya lisans satın alınmışsa kullanılmalıdır. İzin, sadece video veya fotoğrafın haklarına sahip olan kişi veya kuruluş tarafından verilmelidir. Sahip, çekim veya görüntünün yaratıcısı değilse, sahibin yeniden dağıtma hakkına sahip olduğunu garanti etmek için telif sözleşmesinin bir kopyasını almanız gerekebilir. Stok fotoğrafçılığı, satın alındığı lisanslara göre kullanılabilir.<br>
+Vakfın çekimleri gerçek ortamlarda yapılmaktadır, elde edilen video ve fotoğraf çekimleri gerçek kişilerin ve ürünlerin fotoğraflarından oluşmaktadır, model kullanılmamaktadır. Vakfın adının geçeceği görsel ve video kullanımlarında da bu standardın korunması beklenmektedir.<br>
+&nbsp;<br>
+Sorularınız için aşağıdaki adres ile iletişime geçebilirsiniz.</span><br>
+<a href="mailto:Vakifk12@k12.org.tr"><span style="color:black;">info@k12.org.tr</span></a></span></span><br>
+                        <br>
+                        &nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        @media (max-width: 768px) {
+            .footerEdit {
+                text-align: center !important;
+                float: none !important;
+            }
+
+            #footerEdit2 {
+                text-align: center !important;
+                float: none !important;
+            }
+        }
+
+        footer {
+            margin: unset !important;
+        }
+    </style>
+    <link href="/Assets/fontawesome470/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+</div>
+
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/Assets/js/bootstrap.min.js"></script>
+<!-- Menu Toggle Script -->
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-89500724-2', 'auto');
+    ga('send', 'pageview');
+</script>
+<script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapSidebar").toggleClass("toggled");
+    });
+
+    $(document).keypress(function(e) {
+        if (e.which == 13) {
+            if ($("#email").val() != "" && $("#password").val() != "") {
+                login();
+            }
+        }
+    });
+
+    function login() {
+
+        var email = $("#emailLogin").val();
+        var password = $("#passwordLogin").val();
+        if (document.getElementById('remember').checked) {
+            var remember = 1;
+        } else {
+            var remember = 0;
+        }
+        if (email != '' && password != '') {
+
+            $.ajax({
+                type: 'POST',
+                url: "/Controllers/formPosts.php?action=login",
+                data: {
+                    email: email,
+                    password: password,
+                    remember: remember
+                },
+                success: function cevap(e) {
+                    if (!(e.indexOf("ok") > -1)) {
+
+                        $(".alert").html(e);
+                        $(".alert").show();
+
+                    } else if (e.indexOf("ok") > -1) {
+
+                        document.location.href = "/";
+
+                    }
+
+                }
+            })
+
+        } else {
+
+            $(".alert").html("Enter your username and password!");
+            $(".alert").show();
+
+        }
+    }
+
+    function signup() {
+
+        var fullName = $("#fullNameSignup").val();
+        var email = $("#emailSignup").val();
+        var password = $("#passwordSignup").val();
+        var tel = $("#telSignup").val();
+
+        $.ajax({
+            type: 'POST',
+            url: "/Controllers/formPosts.php?action=signup",
+            data: {
+                fullName: fullName,
+                email: email,
+                password: password,
+                tel: tel
+            },
+            success: function cevap(e) {
+                if (!(e.indexOf("//--__\\OK//__--\\") > -1)) {
+
+                    $(".alertS").html(e + '<br/>');
+                    $(".alertS").show();
+
+                } else if (e.indexOf("//--__\\OK//__--\\") > -1) {
+
+                    $("#sDiv").html("<p style='text-align:center;font-weight: bold;'>You have registered successfully!</p>");
+
+                }
+
+            }
+        })
+
+    }
+
+    $("body").on("click", ".mj_tab_items div", function() {
+        $(".mj_tab_items div").removeClass("active");
+        $(".mj_tab_contents div").removeClass("active");
+        $(this).addClass("active");
+        var st = $(this).attr("data-tab");
+        $(st).addClass("active");
+
+    });
+
+    // Accordion Start
+    $(function() {
+        var Accordion = function(el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+
+            // Variables privadas
+            var links = this.el.find('.link');
+            // Evento
+            links.on('click', {
+                el: this.el,
+                multiple: this.multiple
+            }, this.dropdown)
+        }
+
+        Accordion.prototype.dropdown = function(e) {
+            var $el = e.data.el;
+            $this = $(this),
+                $next = $this.nextAll();
+
+            $next.slideToggle();
+            $this.parents().toggleClass('open');
+
+            if (!e.data.multiple) {
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            };
+        }
+
+        var accordion = new Accordion($('#accordion'), false);
+    });
+    // Accordion End
+    $("#submenus85").find('li').first().css('margin-top', "-1rem");
+    $("#submenus15").find('li').first().css('margin-top', "-1rem");
+    $("#submenus17").find('li').first().css('margin-top', "-1rem");
+    $('#56').prop("href", "terms"); // tarihce icin yapildi.
+</script>
+
+<footer class="footer" style="background-color: white">
+    <div class="social-icons">
+        <a href="https://www.facebook.com/vakifk12/" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/vakifk12" class="fa fa-twitter"></a>
+        <a href="https://www.linkedin.com/in/vakifk12/" class="fa fa-linkedin"></a>
+        <a href="https://www.youtube.com/@Vakfk12" class="fa fa-youtube"></a>
+    </div>
+    <div class="footer-links" style="font-size:20px; ">
+        <a href="kvkk.html">KVKK</a>
+        <a href="markakullanimi.html">Marka Kullanımı</a>
+        <a href="mailto:info@k12.org.tr">info@k12.org.tr</a>
+    </div>
+    <div class="copyright" style="margin-top: 10px;"> <!-- Margin-top ekleyerek biraz alta alın -->
+        <p style="font-size: 15px;">© Copyright 2020 <a href="http://www.k12.org.tr/">www.k12.org.tr</a> | Tüm hakları Vakıf k12'ye aittir.</p>
+    </div>
+</footer>
+
+
+
+
+
+
+</body></html>
+
+</body>
+</html>

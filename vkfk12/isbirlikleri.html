@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VAKIF K12</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+
+    .navbar {
+      position: relative; /* Navbar'ı göreceli pozisyona getir */
+    }
+
+    /* Arka planı blurlaştırmak için bir overlay ekliyoruz */
+    .navbar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(245, 245, 247, 0.72);
+      backdrop-filter: saturate(180%) blur(20px); /* Blurlama efekti */
+      z-index: -1;
+    }
+
+
+
+    .navbar-brand img {
+      width: 169px; /* İstenilen genişlik */
+      height: auto; /* Otomatik yükseklik */
+      display: block; /* Blok öğe olarak ayarlama */
+      margin: 0 auto; /* Yatayda otomatik marj */
+      text-align: center; /* Logoyu yatayda ortala */
+
+    }
+    .footer {
+      background-color: #f0f0f0;
+      padding: 10px 20px; /* Yükseklik ve genişlik ayarı */
+      text-align: center;
+      font-size: 20px;
+      margin-top: 200px;
+    }
+
+    .footer .social-icons {
+      float: left; /* Sosyal medya ikonlarını sola al */
+    }
+
+    .footer .footer-links {
+      float: right; /* Yazıları sağa al */
+    }
+
+
+    .footer {
+      color: black; /* Metin rengini siyah yapar */
+    }
+
+    .footer a {
+      color: black; /* Linklerin rengini siyah yapar */
+    }
+
+    .footer a:hover {
+      color: #111111; /* Linklerin üzerine gelindiğinde rengini mavi yapar */
+    }
+
+    .social-icons a {
+      color: #333;
+      margin: 0 10px;
+      font-size: 20px;
+    }
+    .social-icons a:hover {
+      color: blue;
+    }
+
+    .footer-links a {
+      color: #333;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+
+
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    /* Add a hover effect if you want */
+    .fa:hover {
+      opacity: 0.7;
+    }
+
+    /* Set a specific color for each brand */
+
+    /* Facebook */
+    .fa-facebook {
+      background: #ffffff;
+      color: white;
+    }
+
+    /* Twitter */
+    .fa-twitter {
+      background: #ffffff;
+      color: white;
+    }
+
+    .fa-linkedin {
+      background: #ffffff;
+      color: white;
+    }
+    .fa-youtube {
+      background: #ffffff;
+      color: white;
+    }
+    body {
+      padding: 20px;
+      background-color: #ffffff;
+      color: #111111;
+      font-size: 100px;
+      margin-top: 60px; /* Navbar ile iç içe geçmemesi için eklenen boşluk */
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .navbar {
+      position: fixed; /* Navbar'ı üstte sabitlemek için */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999; /* Diğer öğelerin önünde olması için yüksek bir z-index */
+      height: 60px;
+
+    }
+
+    .navbar-nav {
+      margin-right: auto; /* Seçenekleri sağa yasla */
+    }
+
+    .navbar-brand {
+      margin-left: auto; /* Logo yüksekliği ile aynı hizalama */
+      margin-right: auto;
+    }
+
+    .dropdown-menu {
+      z-index: 1000;
+    }
+
+
+    .nav-item:hover .nav-link,
+    .dropdown-item:hover {
+      color: gray!important;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 14px; /* Sekme başlıklarının font boyutunu küçült */
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      font-weight: bold; /* Liste öğelerini bold yap */
+    }
+
+    .dropdown-menu .dropdown-item {
+      font-style: italic; /* İç içe liste öğelerini italic yap */
+    }
+
+    .container1 {
+      margin-top: 75px;
+    }
+
+    .container2 {
+      margin-top: 75px;
+    }
+    .text {
+      text-align: left;
+      font-size:20px;
+    }
+
+
+  </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+<nav position="relative" class=" navbar navbar-expand-lg  navbar-dark">
+  <div style="position: absolute; margin-left: -16px; top: 0px; background-color: rgba(245, 245, 247, 0.72); backdrop-filter: saturate(180%) blur(5search0px); width: 100%; height: 100%; z-index: -1;"></div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+
+        <li class="nav-item dropdown" onmouseover="openDropdown('hakkimizdaDropdown')" onmouseout="closeDropdown('hakkimizdaDropdown')">
+          <a class="nav-link" href="#" style="color: black;">Hakkımızda</a>
+          <div class="dropdown-menu" id="hakkimizdaDropdown">
+            <a class="dropdown-item" href="kurucudan.html">Kurucudan</a>
+            <a class="dropdown-item" href="yonetim.html">Yönetim</a>
+            <a class="dropdown-item" href="20142020.html">2015-2020</a>
+            <a class="dropdown-item" href="stratejikplan.html">Stratejik Plan</a>
+            <a class="dropdown-item" href="raporlar.html">Raporlar</a>
+            <a class="dropdown-item" href="bagis.html">Bağış</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" onmouseover="openDropdown('neyapiyoruzDropdown')" onmouseout="closeDropdown('neyapiyoruzDropdown')">
+          <a class="nav-link" href="#" style="color: black;">Ne Yapıyoruz</a>
+          <div class="dropdown-menu" id="neyapiyoruzDropdown">
+            <a class="dropdown-item" href="cevrimiciogrenim.html">Çevrimiçi Öğrenim</a>
+            <a class="dropdown-item" href="okuldonusum.html">Okul Dönüşüm</a>
+            <a class="dropdown-item" href="isbirlikleri.html">İş Birlikleri</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" onmouseover="openDropdown('nasilYapiyoruzDropdown')" onmouseout="closeDropdown('nasilYapiyoruzDropdown')">
+          <a class="nav-link" href="#" style="color: black;">Nasıl Yapıyoruz</a>
+          <div class="dropdown-menu" id="nasilYapiyoruzDropdown">
+            <a class="dropdown-item" href="projeyonetimi.html">Proje Yönetimi</a>
+            <a class="dropdown-item" href="uretimpaylasim.html">Üretim-Paylaşım</a>
+            <a class="dropdown-item" href="degerlendirme.html">Değerlendirme</a>
+            <a class="dropdown-item" href="etik.html">Etik</a>
+          </div>
+        </li>
+      </ul>
+      <a class="navbar-brand" href="index.html">
+        <img src="vakıfk12_logo.png" alt="Logo" width="80" height="40">
+      </a>
+
+      <div class="ms-auto">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Arama giriniz" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit">Ara</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<h1 style="padding-left: 24px; text-align: left">İş Birlikleri</h1>
+
+<p  style="padding-left: 24px; text-align: left"class="text">Amacımızı gerçekleştirmek için diğer vakıf, kurum ve kuruluşlarla iş birliği yapıyoruz. Bu iş birliğinin iki farklı boyutu bulunuyor;
+  birlikte proje ürettiğimiz ortaklarımız ve bizim projelerimizi destekleyen kurumlarla ortak çalışmalarımız.</p>
+
+<br>
+
+<h1 style="padding-left: 24px; text-align: left">Avrupa Birliği Projeleri</h1>
+
+<p style="padding-left: 24px; text-align: left" class="text">Video yazılımı üzerinden öğrencilerin çevre konulu STEM oyunları tasarlamalarına imkan veren bir Avrupa Birliği projesidir. Çalışma STEM kazanımları, öğrencilerin oyun tasarlamaları, oyunlarını test etmeleri ve çevreci bir şehir tasarlamalarını hedeflemektedir. Öğrencilerin bilimsel ve ekolojik becerileri ile öğrenme yeteneklerini arttırmak - 21. yüzyıl becerilerini kullanarak öğrenmeyi yaymak, yeni stratejiler geliştirmek,
+  bilgi kaynaklarının paylaşılması üstüne yeni metodlar kullanma amaçlarına göre tasarlanan oyun Türkiye ve İtalya'da müfredata uygun olarak okullarda uygulanmıştır.</p>
+
+
+<div  style="padding-left: 24px; text-align: left"class="container1">
+  <img style="padding-left: 24px; text-align: left" src="ABP.jpg" width="300" height="200">
+</div>
+
+<br>
+
+<h1 style="padding-left: 24px; text-align: left">Okuma Ağacı Dağıtım</h1>
+
+<p style="padding-left: 24px; text-align: left" class="text">Okuma Ağacı Projesi’nin öğrenci ve okullara ulaşması için Milli Eğitim Müdürlükleri ve Valiliklerle iş birliği ve ortak projeler yaptık. Bunun yanı sıra kitapların basımı ve dağıtımı için bireysel ve kurumsal sponsorluklar aldık.
+  OKA Dağıtım projesi sonucunda 6 ilde; 140.000 öğrenciye toplam 550.000'den fazla kitap dağıtılmıştır.<p/>
+
+
+<div style="padding-left: 24px; text-align: left" class="container2">
+  <img  style="padding-left: 24px; text-align: left"src="OADjpg.jpg" width="300" height="200">
+</div>
+
+
+
+<script>
+  // Mouse ile üzerine gelindiğinde dropdown menüyü aç
+  function openDropdown(id) {
+    document.getElementById(id).classList.add('show');
+  }
+
+  // Mouse ile dışına çıkıldığında dropdown menüyü kapat
+  function closeDropdown(id) {
+    document.getElementById(id).classList.remove('show');
+  }
+
+  // Mouse ile dropdown menü üzerinden çıkılmadığında menünün açık kalmasını sağla
+  document.addEventListener("mouseover", function(event) {
+    // Dropdown menüsü üzerinden mi çıkıldı kontrol et
+    var isDropdown = event.target.closest(".dropdown");
+    if (!isDropdown) {
+      // Dropdown menüsü dışına çıkıldı, tüm dropdown menüleri kapat
+      var dropdowns = document.querySelectorAll(".dropdown-menu");
+      dropdowns.forEach(function(dropdown) {
+        dropdown.classList.remove('show');
+      });
+    }
+  });
+</script>
+
+
+<footer class="footer" style="background-color: white">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/vakifk12/" class="fa fa-facebook"></a>
+    <a href="https://twitter.com/vakifk12" class="fa fa-twitter"></a>
+    <a href="https://www.linkedin.com/in/vakifk12/" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/@Vakfk12" class="fa fa-youtube"></a>
+  </div>
+  <div class="footer-links" style="font-size:20px; ">
+    <a href="kvkk.html">KVKK</a>
+    <a href="markakullanimi.html">Marka Kullanımı</a>
+    <a href="mailto:info@k12.org.tr">info@k12.org.tr</a>
+  </div>
+  <div class="copyright" style="margin-top: 10px;"> <!-- Margin-top ekleyerek biraz alta alın -->
+    <p style="font-size: 15px;">© Copyright 2020 <a href="http://www.k12.org.tr/">www.k12.org.tr</a> | Tüm hakları Vakıf k12'ye aittir.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VAKIF K12</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #111111;
+      padding: 20px;
+      font-size: 20px;
+      margin-top: 80px;
+      text-align: left;
+    }
+
+    h1 {
+      text-align: center;
+      color: #111111;
+    }
+
+
+    .navbar {
+      position: relative; /* Navbar'ı göreceli pozisyona getir */
+    }
+
+    /* Arka planı blurlaştırmak için bir overlay ekliyoruz */
+    .navbar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(245, 245, 247, 0.72);
+      backdrop-filter: saturate(180%) blur(20px); /* Blurlama efekti */
+      z-index: -1;
+    }
+
+
+
+    .navbar-brand img {
+      width: 169px; /* İstenilen genişlik */
+      height: auto; /* Otomatik yükseklik */
+      display: block; /* Blok öğe olarak ayarlama */
+      margin: 0 auto; /* Yatayda otomatik marj */
+      text-align: center; /* Logoyu yatayda ortala */
+
+    }
+    .footer {
+      background-color: #f0f0f0;
+      padding: 10px 20px; /* Yükseklik ve genişlik ayarı */
+      text-align: center;
+      font-size: 20px;
+      margin-top: 200px;
+    }
+
+    .footer .social-icons {
+      float: left; /* Sosyal medya ikonlarını sola al */
+    }
+
+    .footer .footer-links {
+      float: right; /* Yazıları sağa al */
+    }
+
+
+    .footer {
+      color: black; /* Metin rengini siyah yapar */
+    }
+
+    .footer a {
+      color: black; /* Linklerin rengini siyah yapar */
+    }
+
+    .footer a:hover {
+      color: #111111; /* Linklerin üzerine gelindiğinde rengini mavi yapar */
+    }
+
+    .social-icons a {
+      color: #333;
+      margin: 0 10px;
+      font-size: 20px;
+    }
+    .social-icons a:hover {
+      color: blue;
+    }
+
+    .footer-links a {
+      color: #333;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+
+
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    /* Add a hover effect if you want */
+    .fa:hover {
+      opacity: 0.7;
+    }
+
+    /* Set a specific color for each brand */
+
+    /* Facebook */
+    .fa-facebook {
+      background: #ffffff;
+      color: white;
+    }
+
+    /* Twitter */
+    .fa-twitter {
+      background: #ffffff;
+      color: white;
+    }
+
+    .fa-linkedin {
+      background: #ffffff;
+      color: white;
+    }
+    .fa-youtube {
+      background: #ffffff;
+      color: white;
+    }
+
+
+    p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .navbar {
+      position: fixed; /* Navbar'ı üstte sabitlemek için */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999; /* Diğer öğelerin önünde olması için yüksek bir z-index */
+      height: 60px;
+
+    }
+
+    .navbar-nav {
+      margin-right: auto; /* Seçenekleri sağa yasla */
+    }
+
+    .navbar-brand {
+      margin-left: auto; /* Logo yüksekliği ile aynı hizalama */
+      margin-right: auto;
+    }
+
+    .dropdown-menu {
+      z-index: 1000;
+    }
+
+
+    .nav-item:hover .nav-link,
+    .dropdown-item:hover {
+      color: gray!important;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 14px; /* Sekme başlıklarının font boyutunu küçült */
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      font-weight: bold; /* Liste öğelerini bold yap */
+    }
+
+    .dropdown-menu .dropdown-item {
+      font-style: italic; /* İç içe liste öğelerini italic yap */
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+<nav position="relative" class=" navbar navbar-expand-lg  navbar-dark">
+  <div style="position: absolute; margin-left: -16px; top: 0px; background-color: rgba(245, 245, 247, 0.72); backdrop-filter: saturate(180%) blur(5search0px); width: 100%; height: 100%; z-index: -1;"></div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+
+        <li class="nav-item dropdown" onmouseover="openDropdown('hakkimizdaDropdown')" onmouseout="closeDropdown('hakkimizdaDropdown')">
+          <a class="nav-link" href="#" style="color: black;">Hakkımızda</a>
+          <div class="dropdown-menu" id="hakkimizdaDropdown">
+            <a class="dropdown-item" href="kurucudan.html">Kurucudan</a>
+            <a class="dropdown-item" href="yonetim.html">Yönetim</a>
+            <a class="dropdown-item" href="20142020.html">2015-2020</a>
+            <a class="dropdown-item" href="stratejikplan.html">Stratejik Plan</a>
+            <a class="dropdown-item" href="raporlar.html">Raporlar</a>
+            <a class="dropdown-item" href="bagis.html">Bağış</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" onmouseover="openDropdown('neyapiyoruzDropdown')" onmouseout="closeDropdown('neyapiyoruzDropdown')">
+          <a class="nav-link" href="#" style="color: black;">Ne Yapıyoruz</a>
+          <div class="dropdown-menu" id="neyapiyoruzDropdown">
+            <a class="dropdown-item" href="cevrimiciogrenim.html">Çevrimiçi Öğrenim</a>
+            <a class="dropdown-item" href="okuldonusum.html">Okul Dönüşüm</a>
+            <a class="dropdown-item" href="isbirlikleri.html">İş Birlikleri</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" onmouseover="openDropdown('nasilYapiyoruzDropdown')" onmouseout="closeDropdown('nasilYapiyoruzDropdown')">
+          <a class="nav-link" href="#" style="color: black;">Nasıl Yapıyoruz</a>
+          <div class="dropdown-menu" id="nasilYapiyoruzDropdown">
+            <a class="dropdown-item" href="projeyonetimi.html">Proje Yönetimi</a>
+            <a class="dropdown-item" href="uretimpaylasim.html">Üretim-Paylaşım</a>
+            <a class="dropdown-item" href="degerlendirme.html">Değerlendirme</a>
+            <a class="dropdown-item" href="etik.html">Etik</a>
+          </div>
+        </li>
+      </ul>
+      <a class="navbar-brand" href="index.html">
+        <img src="vakıfk12_logo.png" alt="Logo" width="80" height="40">
+      </a>
+
+      <div class="ms-auto">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Arama giriniz" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit">Ara</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<h1 style="padding-left: 24px; text-align: left">Vakıf k12 6698 Sayılı Kişisel Verilerin Korunması Kanunu Kapsamındaki Aydınlatma Metni</h1>
+
+<br>
+
+<h2 style="padding-left: 24px; text-align: left" >1. Veri Sorumlusunun Kimliği</h2>
+<p style="padding-left: 24px; text-align: left">Bu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanununun 10. maddesi ile Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ (Kanun) kapsamında veri sorumlusu sıfatıyla K12 Eğitim Araştırma ve Geliştirme Vakfı (Vakıf k12) tarafından hazırlanmıştır.</p>
+
+
+
+<h2 style="padding-left: 24px; text-align: left">2. Kişisel Verilerinizin İşlenme Amacı</h2>
+<p style="padding-left: 24px; text-align: left">Vakıf k12, sözlü, yazılı ya da elektronik ortamda edinilmiş kişisel verileri 6698 Sayılı Kanunu’nun 5. ve 6. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları kapsamında işbu Aydınlatma Metninde belirtilen amaçlarla işleyebilmekte ve aktarılabilmektedir.
+
+Toplanan kişisel veriler, Kanun tarafından öngörülen temel ilkelere uygun olarak, aşağıda belirtilen amaçlar doğrultusunda işlenebilir ve taraflara aktarılabilir.
+
+1. Sunulan hizmeti sağlamak ve geliştirmek
+2. Kullanıcı deneyimlerini kişiselleştirmek
+3. Kullanıcı ile iletişim kurmak
+4. Aldığınız hizmeti anlamak ve geliştirmek
+5. Vakıf k12 ortaklık düzenlemelerine katılımınızı sağlamak </p>
+
+
+
+<h2 style="padding-left: 24px; text-align: left" >3. Kişisel Verilerinizin Toplanma Yöntemi ve Hukuki Sebebi</h2>
+<p style="padding-left: 24px; text-align: left"> Kişisel verileriniz VAKIF k12 faaliyetlerini yürütmek amacıyla farklı kanallarla hukuki sebeplerine dayanılarak toplanmaktadır. Vakıf k12‘nin veri sahibinden aldığı kişisel veriler aşağıda listelenmiştir.
+
+
+
+a. İletişim ve profil bilgileri: Adınız, e-posta adresiniz, mesleğiniz ve doğum tarihiniz dahil kullanıcı bilgileri, kaydolduktan sonra profilinizde takma adınız, konumunuz (şehir) ve diğer kişisel veya demografik bilgiler gibi ek bilgiler.
+
+
+
+b. Üçüncü taraf entegre hizmetlerden hesap ve kimlik doğrulama bilgileri: Facebook, Google ve benzeri tek oturum açma (single sign on) hizmeti gibi üçüncü taraf bir sosyal ağ veya entegre hizmet aracılığıyla kaydolmaya veya başka bir şekilde erişim izni vermeye karar verirseniz, Vakıf k12 de “Entegre Hizmet” hesabınızla ilişkilendirilmiş kişisel bilgileri edinir.
+
+
+
+c. Konum bilgisi: Bölgeniz için size özel eğitim deneyimleri sunmak amacıyla konumunuz (ülkeniz, iliniz gibi) hakkında bilgi toplayabilir ve kullanabilir veya IP adresinize göre yaklaşık konumunuzu çıkarabiliriz, ancak tam olarak coğrafi konumunuz alınmaz. Herhangi bir konum bilgisi verilmesini önlemek için bilgisayarınızdaki veya mobil cihazınızdaki ayarları değiştirebilirsiniz.
+
+
+
+d. Bağış ve başvuru verileri: Vakıf k12’ye bağış yaparsanız, teşekkür notu göndermek için adınızı ve posta adresinizi alabiliriz veya kurumsal web sitesi ve çevrimiçi bir işe alım sitesi aracılığıyla ile iş başvurusunda bulunursanız, başvurunuzda verdiğiniz bilgileri toplayabiliriz.
+
+
+
+e. Hizmetimizi kullanımınızla ilgili bilgiler: Hizmetimizi kullanımınızla ilgili görüntülediğiniz sayfalar, görüntülediğiniz video sayısı ve bir sayfada harcanan süre gibi kullanım bilgilerini toplayabiliriz. Bu, sizin için en uygun eğitim deneyimlerini daha iyi uyarlamamızı sağlar.
+
+
+
+f. Kullanım ve cihaz bilgileri: Kullanıcılarımıza kişiselleştirilmiş ve yüksek kaliteli deneyim sağlamak için, web sitemizi ziyaret ettiğinizde, e-postalarımızı okuduğumuzda, hizmetimizi kullandığımızda veya başka bir şekilde bizimle etkileşime girdiğinde tarayıcınızdan veya cihazınızdan belirli teknik bilgileri otomatik olarak kaydeden çeşitli teknolojiler kullanabiliriz. Bu bilgiler genellikle çerezler, web işaretçileri, Flash nesneleri, günlük dosyaları ve benzer teknolojiler (topluca “izleme teknolojileri”) dahil olmak üzere çeşitli izleme teknolojileri aracılığıyla toplanır.</p>
+
+
+
+<h2 style="padding-left: 24px; text-align: left">4. Kişisel Verilerinizin Aktarıldığı Taraflar ve Aktarım Amaçları</h2>
+<p style="padding-left: 24px; text-align: left">Toplanan kişisel verileriniz, Kanun tarafından öngörülen temel ilkelere uygun olarak ve Kanun’un 8. ve 9. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları dahilinde, Vakıf k12 tarafından aşağıda yer alan amaçlar doğrultusunda iş ortaklarımıza, tedarikçilerimize, kanunen yetkili kamu kurumları ve kanunen yetkili özel kurumlara aktarılabilmektedir:
+
+1.İş süreçlerimizin mevzuata uygun yürütülmesi ile hukuk işlerinin takibi ve yürütülmesi amacıyla avukatlar, denetçiler ve vergi danışmanlarına,
+2.Yetkili kurum ve kuruluşlara bilgi verilmesi amacıyla düzenleyici ve denetleyici kurumlar, mahkeme ve icra müdürlükleri gibi sair resmî kurumlara,
+3.Taleplerinizin yerine getirilmesi amacıyla tarafınızca yetki verilmiş olan vekil ve temsilcilerinize,
+4.Yayınların hedeflenen kitlelere ulaşmasını sağlamak amacıyla sosyal medya platformlarına,
+5.Faaliyetlerimizin devamlılığı ve organizasyon gerekliliklerini sağlamak amacıyla hizmet aldığımız üçüncü kişi şirketlere ve iş ortaklarımıza aktarılabilmektedir.
+  6.Sizlerin adını vakfımıza katkıda bulunan kişiler olarak duyurma, eğitimle ilgili istatistik ve çalışmalar amaçları ile kamu kurum ve kuruluşları,</p>
+
+
+
+<h2 style="padding-left: 24px; text-align: left">5. Kişisel Veri Sahibi Olarak Kanun'un 11. Maddesinde Sayılan Hakları</h2>
+<p style="padding-left: 24px; text-align: left"> Kişisel veri sahibi olarak Kanun’un 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:
+
+1. Kişisel verilerinizin işlenip işlenmediğini öğrenme,
+2. Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme,
+3. Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,
+4. Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçü̈ncü̈ kişileri bilme,
+5. Kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme ve bu kapsamda yapılan işlemin kişisel verilerinizin aktarıldığı üçüncü̈ kişilere bildirilmesini isteme,
+6. Kanun’a ve ilgili diğer kanun hükümlerine uygun olarak işlenmiş olmasına rağmen, işlenmesini gerektiren sebeplerin ortadan kalkması hâlinde kişisel verilerin silinmesini veya yok edilmesini isteme ve bu kapsamda yapılan işlemin kişisel verilerinizin aktarıldığı üçüncü̈ kişilere bildirilmesini isteme,
+7. İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkması durumunda buna itiraz etme,
+8. Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme
+
+
+Haklarınıza yönelik başvurularınızı info@k12.org.tr adresine iletebilirsiniz. Talebinizin niteliğine göre en kısa sürede ve en geç otuz gün içinde ücretsiz olarak başvurularınız sonuçlandırılacaktır;
+ancak ayrıca bir maliyet doğması halinde Vakıf’ın Kişisel Verileri Koruma Kurulunca belirlenecek tarifeye göre tarafınızdan ücret talep edebilme hakkı saklıdır.</p>
+
+<script>
+  // Mouse ile üzerine gelindiğinde dropdown menüyü aç
+  function openDropdown(id) {
+    document.getElementById(id).classList.add('show');
+  }
+
+  // Mouse ile dışına çıkıldığında dropdown menüyü kapat
+  function closeDropdown(id) {
+    document.getElementById(id).classList.remove('show');
+  }
+
+  // Mouse ile dropdown menü üzerinden çıkılmadığında menünün açık kalmasını sağla
+  document.addEventListener("mouseover", function(event) {
+    // Dropdown menüsü üzerinden mi çıkıldı kontrol et
+    var isDropdown = event.target.closest(".dropdown");
+    if (!isDropdown) {
+      // Dropdown menüsü dışına çıkıldı, tüm dropdown menüleri kapat
+      var dropdowns = document.querySelectorAll(".dropdown-menu");
+      dropdowns.forEach(function(dropdown) {
+        dropdown.classList.remove('show');
+      });
+    }
+  });
+</script>
+
+
+
+<footer class="footer" style="background-color: white">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/vakifk12/" class="fa fa-facebook"></a>
+    <a href="https://twitter.com/vakifk12" class="fa fa-twitter"></a>
+    <a href="https://www.linkedin.com/in/vakifk12/" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/@Vakfk12" class="fa fa-youtube"></a>
+  </div>
+  <div class="footer-links" style="font-size:20px; ">
+    <a href="kvkk.html">KVKK</a>
+    <a href="markakullanimi.html">Marka Kullanımı</a>
+    <a href="mailto:info@k12.org.tr">info@k12.org.tr</a>
+  </div>
+  <div class="copyright" style="margin-top: 10px;"> <!-- Margin-top ekleyerek biraz alta alın -->
+    <p style="font-size: 15px;">© Copyright 2020 <a href="http://www.k12.org.tr/">www.k12.org.tr</a> | Tüm hakları Vakıf k12'ye aittir.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

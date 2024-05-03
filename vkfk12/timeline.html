@@ -1,0 +1,878 @@
+<html lang="pt-br" dir="ltr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>2015-2020</title>
+  <link href="//cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+
+    .navbar {
+      position: relative; /* Navbar'ı göreceli pozisyona getir */
+    }
+
+    /* Arka planı blurlaştırmak için bir overlay ekliyoruz */
+    .navbar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(245, 245, 247, 0.72);
+      backdrop-filter: saturate(180%) blur(20px); /* Blurlama efekti */
+      z-index: -1;
+    }
+
+
+
+    .navbar-brand img {
+      width: 169px; /* İstenilen genişlik */
+      height: auto; /* Otomatik yükseklik */
+      display: block; /* Blok öğe olarak ayarlama */
+      margin: 0 auto; /* Yatayda otomatik marj */
+      text-align: center; /* Logoyu yatayda ortala */
+
+    }
+    .footer {
+      background-color: #f0f0f0;
+      padding: 10px 20px; /* Yükseklik ve genişlik ayarı */
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .footer .social-icons {
+      float: left; /* Sosyal medya ikonlarını sola al */
+    }
+
+    .footer .footer-links {
+      float: right; /* Yazıları sağa al */
+    }
+
+
+    .footer {
+      color: black; /* Metin rengini siyah yapar */
+    }
+
+    .footer a {
+      color: black; /* Linklerin rengini siyah yapar */
+    }
+
+    .footer a:hover {
+      color: #111111; /* Linklerin üzerine gelindiğinde rengini mavi yapar */
+    }
+
+    .social-icons a {
+      color: #333;
+      margin: 0 10px;
+      font-size: 20px;
+    }
+    .social-icons a:hover {
+      color: blue;
+    }
+
+    .footer-links a {
+      color: #333;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+
+
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    /* Add a hover effect if you want */
+    .fa:hover {
+      opacity: 0.7;
+    }
+
+    /* Set a specific color for each brand */
+
+    /* Facebook */
+    .fa-facebook {
+      background: #ffffff;
+      color: white;
+    }
+
+    /* Twitter */
+    .fa-twitter {
+      background: #ffffff;
+      color: white;
+    }
+
+    .fa-linkedin {
+      background: #ffffff;
+      color: white;
+    }
+    .fa-youtube {
+      background: #ffffff;
+      color: white;
+    }
+    body {
+      padding: 20px;
+      background-color: #ffffff;
+      color: #111111;
+      font-size: 25px;
+      margin-top: 60px; /* Navbar ile iç içe geçmemesi için eklenen boşluk */
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .navbar {
+      position: fixed; /* Navbar'ı üstte sabitlemek için */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999; /* Diğer öğelerin önünde olması için yüksek bir z-index */
+      height: 60px;
+
+    }
+
+    .navbar-nav {
+      margin-right: auto; /* Seçenekleri sağa yasla */
+    }
+
+    .navbar-brand {
+      margin-left: auto; /* Logo yüksekliği ile aynı hizalama */
+      margin-right: auto;
+    }
+
+    .dropdown-menu {
+      z-index: 1000;
+    }
+
+
+    .nav-item:hover .nav-link,
+    .dropdown-item:hover {
+      color: #111111 !important;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 14px; /* Sekme başlıklarının font boyutunu küçült */
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      font-weight: bold; /* Liste öğelerini bold yap */
+    }
+
+    .dropdown-menu .dropdown-item {
+      font-style: italic; /* İç içe liste öğelerini italic yap */
+    }
+
+    .timeline {
+      background-color: var(--sk-body-background-color, #fff);
+      list-style: none;
+      padding: 20px 0 20px;
+      position: relative;
+
+    }
+
+    .timeline:before {
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      content: " ";
+      width: 3px;
+      background-color: #eeeeee;
+      left: 50%;
+      margin-left: -1.5px;
+    }
+
+    .timeline > li {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .timeline > li:before,
+    .timeline > li:after {
+      content: " ";
+      display: table;
+    }
+
+    .timeline > li:after {
+      clear: both;
+    }
+
+    .timeline > li:before,
+    .timeline > li:after {
+      content: " ";
+      display: table;
+    }
+
+    .timeline > li:after {
+      clear: both;
+    }
+
+    .timeline > li > .timeline-panel {
+      width: 46%;
+      float: left;
+      border: 1px solid #d4d4d4;
+      border-radius: 2px;
+      padding: 20px;
+      position: relative;
+      -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    }
+
+    .timeline > li > .timeline-panel:before {
+      position: absolute;
+      top: 26px;
+      right: -15px;
+      display: inline-block;
+      border-top: 15px solid transparent;
+      border-left: 15px solid #ccc;
+      border-right: 0 solid #ccc;
+      border-bottom: 15px solid transparent;
+      content: " ";
+    }
+
+    .timeline > li > .timeline-panel:after {
+      position: absolute;
+      top: 27px;
+      right: -14px;
+      display: inline-block;
+      border-top: 14px solid transparent;
+      border-left: 14px solid #fff;
+      border-right: 0 solid #fff;
+      border-bottom: 14px solid transparent;
+      content: " ";
+    }
+
+    .timeline > li > .timeline-badge {
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 1.4em;
+      text-align: center;
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      margin-left: -25px;
+      background-color: #999999;
+      z-index: 100;
+      border-top-right-radius: 50%;
+      border-top-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+
+    .timeline > li.timeline-inverted > .timeline-panel {
+      float: right;
+    }
+
+    .timeline > li.timeline-inverted > .timeline-panel:before {
+      border-left-width: 0;
+      border-right-width: 15px;
+      left: -15px;
+      right: auto;
+    }
+
+    .timeline > li.timeline-inverted > .timeline-panel:after {
+      border-left-width: 0;
+      border-right-width: 14px;
+      left: -14px;
+      right: auto;
+    }
+
+    .timeline-badge.primary {
+      background-color: rgb(168, 168, 168) !important;
+    }
+
+    .timeline-badge.success {
+      background-color: rgb(168, 168, 168) !important;
+    }
+
+    .timeline-badge.warning {
+      background-color: rgb(168, 168, 168) !important;
+    }
+
+    .timeline-badge.danger {
+      background-color: rgb(168, 168, 168) !important;
+    }
+
+    .timeline-badge.info {
+      background-color: rgb(168, 168, 168) !important;
+    }
+
+    .timeline-title {
+      margin-top: 0;
+      color: inherit;
+    }
+
+    .timeline-body > p,
+    .timeline-body > ul {
+      margin-bottom: 0;
+    }
+
+    .timeline-body > p + p {
+      margin-top: 5px;
+    }
+
+
+    @media (max-width: 767px) {
+
+      ul.timeline:before {
+        left: 40px;
+      }
+
+      ul.timeline > li > .timeline-panel {
+        width: calc(100% - 90px);
+        width: -moz-calc(100% - 90px);
+        width: -webkit-calc(100% - 90px);
+      }
+
+      ul.timeline > li > .timeline-badge {
+        left: 15px;
+        margin-left: 0;
+        top: 16px;
+      }
+
+      ul.timeline > li > .timeline-panel {
+        float: right;
+      }
+
+      ul.timeline > li > .timeline-panel:before {
+        border-left-width: 0;
+        border-right-width: 15px;
+        left: -15px;
+        right: auto;
+      }
+
+      ul.timeline > li > .timeline-panel:after {
+        border-left-width: 0;
+        border-right-width: 14px;
+        left: -14px;
+        right: auto;
+      }
+    }
+    #resim1{
+      height: 20%;
+      width: 100%;
+
+    }
+    h1{
+      text-align: center;
+      background-color: var(--sk-body-background-color, #fff);
+      color: gray;
+
+    }
+
+
+    body{
+      background-color: var(--sk-body-background-color, #fff);
+    }
+    .timeline-panel{
+      background-color: var(--sk-body-background-color, #fff);
+
+      transition: all 0.3s ease;
+
+
+
+    }
+    .timeline-panel:hover{
+      transform: scale(1.05);
+      background-color: var(--sk-body-background-color, #fff);
+      border-style:hidden;
+      border-radius:15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Gölge efekti */
+
+    }
+    .timeline-badge{
+      color: rgb(168, 160, 160) !important;
+      z-index:1 !important;
+    }
+
+
+
+
+
+
+
+    .nav-link{
+      color: rgb(168, 160, 160) !important;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+      h1{
+        width: 80%;
+        display: flex;
+        align-items:center !important;
+      }
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+<nav position="relative" class=" navbar navbar-expand-lg  navbar-dark">
+  <div style="position: absolute; margin-left: -16px; top: 0px; background-color: rgba(245, 245, 247, 0.72); backdrop-filter: saturate(180%) blur(5search0px); width: 100%; height: 100%; z-index: -1;"></div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+
+        <li class="nav-item dropdown" onmouseover="openDropdown('hakkimizdaDropdown')" onmouseout="closeDropdown('hakkimizdaDropdown')">
+          <a class="nav-link" href="#" style="color: black;">Hakkımızda</a>
+          <div class="dropdown-menu" id="hakkimizdaDropdown">
+            <a class="dropdown-item" href="kurucudan.html">Kurucudan</a>
+            <a class="dropdown-item" href="yonetim.html">Yönetim</a>
+            <a class="dropdown-item" href="20142020.html">2015-2020</a>
+            <a class="dropdown-item" href="stratejikplan.html">Stratejik Plan</a>
+            <a class="dropdown-item" href="raporlar.html">Raporlar</a>
+            <a class="dropdown-item" href="bagis.html">Bağış</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" onmouseover="openDropdown('neyapiyoruzDropdown')" onmouseout="closeDropdown('neyapiyoruzDropdown')">
+          <a class="nav-link" href="#" style="color: black;">Ne Yapıyoruz</a>
+          <div class="dropdown-menu" id="neyapiyoruzDropdown">
+            <a class="dropdown-item" href="cevrimiciogrenim.html">Çevrimiçi Öğrenim</a>
+            <a class="dropdown-item" href="okuldonusum.html">Okul Dönüşüm</a>
+            <a class="dropdown-item" href="isbirlikleri.html">İş Birlikleri</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" onmouseover="openDropdown('nasilYapiyoruzDropdown')" onmouseout="closeDropdown('nasilYapiyoruzDropdown')">
+          <a class="nav-link" href="#" style="color: black;">Nasıl Yapıyoruz</a>
+          <div class="dropdown-menu" id="nasilYapiyoruzDropdown">
+            <a class="dropdown-item" href="projeyonetimi.html">Proje Yönetimi</a>
+            <a class="dropdown-item" href="uretimpaylasim.html">Üretim-Paylaşım</a>
+            <a class="dropdown-item" href="degerlendirme.html">Değerlendirme</a>
+            <a class="dropdown-item" href="etik.html">Etik</a>
+          </div>
+        </li>
+      </ul>
+      <a class="navbar-brand" href="index.html">
+        <img src="vakıfk12_logo.png" alt="Logo" width="80" height="40">
+      </a>
+
+      <div class="ms-auto">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Arama giriniz" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit">Ara</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="container">
+    <div class="page-header">
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="color: black;text-align: center">2014</h1>
+    <ul class="timeline">
+      <li>
+        <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/da801efd70b12d009c41238413f33e08.jpg" id="resim1" alt="">
+            <h4 class="timeline-title">Kuruluş</h4>
+            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2014</small></p>
+          </div>
+          <div class="timeline-body">
+            <p>K12 Eğitim Araştırma ve Geliştirme Vakfı kuruluşu için resmi sürecin tamamlanması ve vakfın resmi olarak kurulması. </p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-badge "><i class="glyphicon glyphicon-credit-card"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/df8b5d58035326ba4df1b95aaaabf524.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">Marka Tescili</h4>
+            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2014</small></p>
+            <div class="timeline-body">
+              <p>K12 Eğitim Araştırma ve Geliştirme Vakfı kuruluşu için resmi süresin tamamlanmasının ardından Vakıf marka tescilinin yapılması. Vakfın kurumsal kimliği ile ilk kullanılan logonun oluşturulması.</p>
+            </div>
+          </div>
+        </div></li>
+    </ul>
+    <h1  style="color: black ;text-align: center">2015</h1>
+
+    <ul class="timeline">
+
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-credit-card"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/fea000f9ad522cdf1dcfcb15f29215dd.png" alt="" id="resim1">
+            <h4 class="timeline-title">Okuma Ağacı Üretim</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Okuma Ağacı projesi için yazar ve çizer arayışılarına başlanması. Deneme çizimler, literatür taramaları, piyasa araştırmaları, senaryolar üzerine çalışılması. </p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-badge "><i class="glyphicon glyphicon-credit-card"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/041e53d20137a5a0d6d8f3fe80c1dd9e.JPG" alt="" id="resim1">
+            <h4 class="timeline-title">MSGSÜ Formasyon Programı</h4>
+          </div>
+          <div class="timeline-body">
+            <p>MSGSÜ Formasyon Programı’na devam eden öğretmen adaylarıyla dört hafta boyunca ‘Dijital Çağda Öğrenim’ ve ‘Öğrenimde Tablet Kullanımı’ üzerine uygulamalı çalışma yapılması.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-credit-card"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/792a96b2efb16c7ff532e8c534309aa6.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">Sanal Gezi Görsel Envanter</h4>
+            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2014</small></p>
+            <div class="timeline-body">
+              <p>Sanal Gezi projesi için görsel envaterlerin (havadan video ve fotoğraf çekimleri, iç ve dış mekan çekimleri, üç boyutlu model) oluşturulmaya başlanması.</p>
+            </div>
+          </div>
+        </div></li>
+      <li class="timeline-inverted">
+        <div class="timeline-badge "><i class="glyphicon glyphicon-credit-card"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/c55ad34b6ebbd8f9fd0251a7e4364898.png" alt="" id="resim1">
+            <h4 class="timeline-title">Darüşşafaka Eğitim Kurumları</h4>
+            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2014</small></p>
+            <div class="timeline-body">
+              <p>Darüşşafaka Eğitim Kurumları ile 21. Yüzyıl dönüşüm projesinin çözüm ortağı olarak çalışılmaya başlanması.</p>
+            </div>
+          </div>
+        </div></li>
+    </ul>
+
+    <h1  style="color: black ;text-align: center">2016</h1>
+
+    <ul class="timeline">
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-floppy-disk"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/f601d389b4d0a2d55fee6c5352938d23.png" alt="" id="resim1">
+            <h4 class="timeline-title">Edebiyat Web Sitesi</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Türk edebiyatının temel eserlerinin detaylı analizlerinin ve edebi kavramların analizleri, listelerinin yer aldığı web sitesinin yayına başlaması.</p>
+
+          </div>
+        </div></li>
+      <li class="timeline-inverted">
+        <div class="timeline-badge "><i class="glyphicon glyphicon-floppy-disk"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/e5702f7ddc82d71f54e14a8a0318707c.png" alt="" id="resim1">
+            <h4 class="timeline-title">Erasmus+ DigitGame</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Ortaokul ve lise öğrencilerinin akıllı şehir kavramı üzerinden sürdürülebilir enerji kaynakları ve şehirleşme konularını irdeleyebilecekleri Erasmus' tarafından desteklenen web tabanlı oyunun geliştirilmesine başlanması.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-thumbs-up"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="/ok.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">Okuma Ağacı</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Okuma Ağacı kitap serisinin üretimine devam edilmesi, kitapların yazımı ve çizimlerinin yapılması.</p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-badge "><i class="glyphicon glyphicon-thumbs-up"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/3638af7373da3e42dbd4d106e29af5e5.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">Darüşşafaka Eğitim Kurumları</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Darüşşafaka Eğitim Kurumları ile yapılan çalışmalara devam edilmesi. Kurum stratejik plan çalışmaları ve teknoloji entegrasyonu konusunda danışmanlık verilmesi.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-thumbs-up"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/f339e15bc09b1841c7d85573c6d4c18b.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">Sanal Gezi Görsel Envanter</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Sanal Gezi projesi için görsel envanter oluşturulmasına devam edilmesi. Özellikle tarihi binaların üç boyutlu modellerinin oluşturulması. </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <h1  style="color: black;text-align: center">2017</h1>
+    <ul class="timeline">
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-floppy-disk"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/4e779a13f3ea0c4083a48c3051b252ef.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">Okuma Ağacı Üretim</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Okuma Ağacı kitaplarının üretimine devam edilmesi, yazılarla çizimlerin birleştirilerek kitap tasarımlarının yapılmaya başlanması.</p>
+
+          </div>
+        </div></li>
+      <li class="timeline-inverted">
+        <div class="timeline-badge "><i class="glyphicon glyphicon-floppy-disk"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/8e17f490b18aee04a45603c9d1faa27b.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">Erasmus+ DigitGame</h4>
+          </div>
+          <div class="timeline-body">
+            <p>İtalya, Türkiye ve İngiltere'den kurumların ortaklığı ile İngiltere'de gerçekleşen ilk proje toplantısının ardında oyunun tasarlanmaya başlanması.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-thumbs-up"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/67c2b3c00435fb7203feb810dca4a21a.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">Edebiyat Web Sitesi</h4>
+          </div>
+          <div class="timeline-body">
+            <p>2016 yılında yayına alınan Edebiyat web sitesine yeni eser analizlerinin ve çalışmaların yüklenmeye devam edilmesi. </p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-badge "><i class="glyphicon glyphicon-floppy-disk"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/92566613a8cf578d3e206db6bee4413b.jpeg" alt="" id="resim1">
+            <h4 class="timeline-title">Darüşşafaka Eğitim Kurumları</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Okul ve öğrenim yönetimi sistemi + 1:1 iPad’le öğrenime geçişin planlaması, uygulaması ve değerlendirilmesi.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <h1 style="color: black;text-align: center">2018</h1>
+    <ul class="timeline">
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-floppy-disk"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/646969a0adc87bf721b073015d214513.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">Okuma Ağacı Kitap Tasarımları</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Okuma Ağacı kitaplarının seviye bazlı tasarımlarının yapılmaya başlanması, üretilen kitapların bu tasarımlara göre oluşturulması.</p>
+
+          </div>
+        </div></li>
+      <li class="timeline-inverted">
+        <div class="timeline-badge "><i class="glyphicon glyphicon-thumbs-up"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/0b618437e62801ecffb7b86057d506a6.png" alt="" id="resim1">
+            <h4 class="timeline-title">Tanzimat Eserleri</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Tanzimat döneminde yazılmış önemli eserleri günümüz Türkçesi'ne çevrilmeye, zenginleştirilmiş içerik ve açıklama içeren videoların üretilmeye başlanması. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-panel">
+          <div class="timeline-badge "><i class="glyphicon glyphicon-floppy-disk"></i></div>
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/86a6b13761f9ed7a033f3fd4581d84dd.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">TEVİTÖL</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Türk Eğitim Vakfının Lisesi TEVİTÖL Eğitim Kurumu ile  danışmanlık çalışmalarının yürütülmeye başlanması. </p>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+    <h1  style="color: black;text-align: center">2019</h1>
+    <ul class="timeline">
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-floppy-disk"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/0469aaa40e396097b7ef976def6b14ca.jpeg" alt="" id="resim1">
+            <h4 class="timeline-title">Darüşşafaka Eğitim Kurumları</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Darüşşafaka Eğitim Kurumaları ile yapılan çalışmaların tamamlanması.</p>
+
+          </div>
+        </div></li>
+      <li class="timeline-inverted">
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/515be78c78150075bd6490c5de7abe92.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">OKA Kitaplarının Basımı ve Dağıtılması</h4>
+          </div>
+          <div class="timeline-body">
+            <p>752.000 kitap Muğla, Malatya, Samsun/Altınordu, Gaziantep/Yavuzeli, Diyarbakır, Şanlıurfa/Harran'da dağıtıldı. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-thumbs-up"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/1556d952fa39e6ec1045d281f972bd08.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">Tanzimat Web Sitesi</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Tanzimat Web Sitesinin kullanıcılara açılması.</p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/b713a5037e27d2d060b02fdba9082848.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">OKA Öğrenim Platformu</h4>
+          </div>
+          <div class="timeline-body">
+            <p>752.000 kitap Muğla, Samsun/Altınordu, Gaziantep/Yavuzeli'n de dağıtıldı.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-thumbs-up"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/86a6b13761f9ed7a033f3fd4581d84dd.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">TEVİTÖL</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Disiplinler arası (STEM – STEAM), araştırma ve problem çözmeye dayalı, 21. yüzyıl ve bilişim becerilerini kullanan ve geliştiren, Fen – Matematik – Teknoloji ve Tasarım odaklı öğrenme programı T21C çalışmalarına devam edilmesi. </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <h1  style="color: black;text-align: center">2020</h1>
+    <ul class="timeline">
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-floppy-disk"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/bb8db2c1bdc9b690fc8a3d36d34d5f25.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">Vakıf k12 İlk Dönem Değerlendirmesi</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Vakıf k12'nin kuruluşundan bu yana yaptığı çalışmaların değerlendirilmesi (2014-2019) ve 2023 Stratejik Plan çalışmalarının oluşturulması. </p>
+
+          </div>
+        </div></li>
+      <li class="timeline-inverted">
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/6bc257b6f82b56c018430badaf591571.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">OKA Dağıtım</h4>
+          </div>
+          <div class="timeline-body">
+            <p>Okuma Ağacı kitaplarının Malatya, Diyarbakır ve Harran'da öğrencilere dağılması. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-badge "><i class="glyphicon glyphicon-thumbs-up"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <img class="img-responsive" src="http://admindemo.k12.org.tr/Uploads/aa19e1d1913f9245214fa8777bcd7a9e.jpg" alt="" id="resim1">
+            <h4 class="timeline-title">TEVİTÖL</h4>
+          </div>
+          <div class="timeline-body">
+            <p>T21C ve uzaktan öğrenme planlama, uygulama ve değerlendirme.  </p>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<footer class="footer" style="background-color: white">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/vakifk12/" class="fa fa-facebook"></a>
+    <a href="https://twitter.com/vakifk12" class="fa fa-twitter"></a>
+    <a href="https://www.linkedin.com/in/vakifk12/" class="fa fa-linkedin"></a>
+    <a href="https://www.youtube.com/@Vakfk12" class="fa fa-youtube"></a>
+  </div>
+  <div class="footer-links" style="font-size:20px; ">
+    <a href="kvkk.html">KVKK</a>
+    <a href="markakullanimi.html">Marka Kullanımı</a>
+    <a href="mailto:info@k12.org.tr">info@k12.org.tr</a>
+  </div>
+  <div class="copyright" style="margin-top: 10px;"> <!-- Margin-top ekleyerek biraz alta alın -->
+    <p style="font-size: 15px;">© Copyright 2020 <a href="http://www.k12.org.tr/">www.k12.org.tr</a> | Tüm hakları Vakıf k12'ye aittir.</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener("scroll", function() {
+    var nav = document.querySelector('.my-nav'); // .my-nav sınıfını seçiyoruz
+    var threshold = 1;
+
+    if (window.scrollY > threshold) {
+      nav.style.backgroundColor = 'transparent';
+      nav.classList.add('blurred');
+    } else {
+      nav.style.backgroundColor = 'white';
+      nav.classList.remove('blurred');
+    }
+  });
+</script>
+
+
+
+
+</body></html>
